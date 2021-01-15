@@ -1,9 +1,10 @@
 var PORT = process.env.PORT || 3000;
 var express = require("express");
 var app = express();
+var path = require('path');
 
 app.get("/", function(req,res){
-	res.send("Hello world");
+	res.sendFile(path.join(__dirname+'/index.html'));
 });
 app.listen(PORT);
 
@@ -12,6 +13,5 @@ app.listen(PORT);
 
 
 
-//	res.sendFile(path.join(_dirname+'/index.html'));
 
-//var path = require('path');
+
